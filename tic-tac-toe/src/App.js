@@ -14,7 +14,7 @@ function App() {
  
 React.useEffect(()=>{
   if(player === 1){
-   let l = new Leaf(board,0);
+   let l = new Leaf(board,-1);
    l = minmax(l,0,false);
    console.log(l);
    if(l === 0) {
@@ -23,31 +23,47 @@ React.useEffect(()=>{
       setPlayer(-1);
     }, 3000);
    }
-   else if(l.score < 0) {
-    setTimeout(() => {
-      setStatus("O won!");
-      setBoard([0, 0, 0, 0, 0, 0, 0, 0, 0]);
-      setPlayer(-1);
-      let newScore = {...score};
-      newScore.o = newScore.o +1;
-      setScore(newScore);
-
-    }, 3000);
-   }
    else if(l.score > 0) {
-     setStatus("X won!");
-    setTimeout(() => {
-      setBoard([0, 0, 0, 0, 0, 0, 0, 0, 0]);
-      setPlayer(-1);
-      let newScore = {...score};
-      newScore.x = newScore.x +1;
-      setScore(newScore);
-    }, 3000);
+    if(l.value.winner === 'X'){
+      setStatus("X won!");
+      setTimeout(() => {
+        setBoard([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        setPlayer(-1);
+        let newScore = {...score};
+        newScore.x = newScore.x +1;
+        setScore(newScore);
+        setStatus('');
+      }, 3000);
+     }
+  }
+   /*
+   else if(l.score < 0) {
+    
+   }
+   
+   */
+
+   let leaf = new Leaf(board);
+   
+   if(leaf.value.winner) {
+
+     if(leaf.value.winner === 'O') {
+      setStatus("O won!");
+      setTimeout(() => {
+      
+        setBoard([0, 0, 0, 0, 0, 0, 0, 0, 0]);
+        setPlayer(-1);
+        let newScore = {...score};
+        newScore.o = newScore.o +1;
+        setScore(newScore);
+        setStatus('');
+      }, 3000);
+     }
    }
    if(l && l.value){
-   setBoard(l.value.board);
-   setPlayer(2);
-   }
+    setBoard(l.value.board);
+    setPlayer(2);
+    }
   }
 },[player, board, score]);
 

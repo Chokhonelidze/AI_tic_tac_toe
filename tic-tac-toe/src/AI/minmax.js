@@ -1,14 +1,29 @@
 import Leaf from "./leaf";
+function updateParents(leaf,score){
+  if(leaf) {
+    if(Math.abs(score) > Math.abs(leaf.score)){
+      leaf.score = score;
+    }
+    else{
+      score = leaf.score;
+    }
+
+      updateParents(leaf.parent,score);
+  }
+}
 let minmax = (leaf,depth,isMax)=> {
+  
     const player = 2;
     const oponent = 1;
     if(leaf.value.winner) {
       if(leaf.value.winner === "X"){
       leaf.score = leaf.value.evaluate();
+      updateParents(leaf,leaf.score);
       return leaf;
       }
       else{
         leaf.score = -1 * leaf.value.evaluate();
+        updateParents(leaf,leaf.score);
       return leaf;
       }
     }

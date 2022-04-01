@@ -8,7 +8,7 @@ export default class Board {
     }
     evaluate() {
         if(this.winner) {
-            return 100 - this.depth;
+            return 100 / this.depth;
         }
     }
     isWinner(board) {
