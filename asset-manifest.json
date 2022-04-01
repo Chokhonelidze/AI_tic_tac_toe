@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/AI_tic_tac_toe.git/static/css/main.14f4f5d0.css",
-    "main.js": "/AI_tic_tac_toe.git/static/js/main.a0e924a4.js",
-    "static/js/787.393238a3.chunk.js": "/AI_tic_tac_toe.git/static/js/787.393238a3.chunk.js",
-    "index.html": "/AI_tic_tac_toe.git/index.html",
-    "main.14f4f5d0.css.map": "/AI_tic_tac_toe.git/static/css/main.14f4f5d0.css.map",
-    "main.a0e924a4.js.map": "/AI_tic_tac_toe.git/static/js/main.a0e924a4.js.map",
-    "787.393238a3.chunk.js.map": "/AI_tic_tac_toe.git/static/js/787.393238a3.chunk.js.map"
+    "main.css": "/AI_tic_tac_toe/static/css/main.14f4f5d0.css",
+    "main.js": "/AI_tic_tac_toe/static/js/main.2c138128.js",
+    "static/js/787.393238a3.chunk.js": "/AI_tic_tac_toe/static/js/787.393238a3.chunk.js",
+    "index.html": "/AI_tic_tac_toe/index.html",
+    "main.14f4f5d0.css.map": "/AI_tic_tac_toe/static/css/main.14f4f5d0.css.map",
+    "main.2c138128.js.map": "/AI_tic_tac_toe/static/js/main.2c138128.js.map",
+    "787.393238a3.chunk.js.map": "/AI_tic_tac_toe/static/js/787.393238a3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14f4f5d0.css",
-    "static/js/main.a0e924a4.js"
+    "static/js/main.2c138128.js"
   ]
 }
