@@ -17,7 +17,7 @@ React.useEffect(()=>{
    let l = new Leaf(board,-1);
    l = minmax(l,0,false);
    console.log(l);
-   if(l === 0) {
+   if(l === 0 || l.score === -1000) {
     setTimeout(() => {
       setBoard([0, 0, 0, 0, 0, 0, 0, 0, 0]);
       setPlayer(-1);
