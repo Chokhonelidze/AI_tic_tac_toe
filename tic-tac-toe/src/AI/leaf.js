@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+
 import Board from "./board";
 export default class Leaf {
   constructor(state = null, depth = 0) {
