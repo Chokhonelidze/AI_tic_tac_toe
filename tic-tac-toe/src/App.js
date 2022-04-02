@@ -15,7 +15,19 @@ function App() {
 React.useEffect(()=>{
   if(player === 1){
    let l = new Leaf(board,-1);
-   l = minmax(l,0,false);
+   if(l.parent)
+   l = minmax(l,-1,false);
+   else{
+    let newBoard = l.value.board;
+    if(newBoard[4] === 0) {
+      newBoard[4] = 1;
+      l.value.board = newBoard;
+    }
+    else{
+      l = minmax(l,-1,false);
+    }
+  
+   }
    console.log(l);
    if(l === 0 || l.score === -1000) {
     setTimeout(() => {
